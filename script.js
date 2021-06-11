@@ -50,8 +50,8 @@ window.addEventListener('load', function() {
                launchStat.style.color = "red";
                //make sure to add these to view and update the bottom part of the page
                faultyItems.style.visibility = 'visible';
-               pilotStatus.innerText = `${pilot.value} ready is ready for launch`;
-               copilotStatus.innerText = `${coPilot.value} ready is ready for launch`;
+               pilotStatus.innerText = `Pilot ${pilot.value} ready is ready for launch`;
+               copilotStatus.innerText = `Co-pilot ${coPilot.value} ready is ready for launch`;
                launchStat.innerText = "Shuttle not ready for launch";
                fuelStatus.innerText ='Fuel level is not enough for the journey';
                cargoStatus.innerText ='Shuttle mass is too high for the journey';       
@@ -59,8 +59,8 @@ window.addEventListener('load', function() {
             else if(cargoKg.value > 10000 && fuelLvl.value > 10000){
                launchStat.style.color = "red";
                faultyItems.style.visibility = 'visible';
-               pilotStatus.innerText = `${pilot.value} ready is ready for launch`;
-               copilotStatus.innerText = `${coPilot.value} ready is ready for launch`;
+               pilotStatus.innerText = `Pilot ${pilot.value} ready is ready for launch`;
+               copilotStatus.innerText = `Co-pilot ${coPilot.value} ready is ready for launch`;
                launchStat.innerText = "Shuttle not ready for launch";
                cargoStatus.innerText ='Shuttle mass is too high for the journey';       
                }
@@ -68,8 +68,8 @@ window.addEventListener('load', function() {
             else if(fuelLvl.value < 10000 && cargoKg.value < 10000){
                launchStat.style.color = "red";
                faultyItems.style.visibility = 'visible';
-               pilotStatus.innerText = `${pilot.value} ready is ready for launch`;
-               copilotStatus.innerText = `${coPilot.value} ready is ready for launch`;
+               pilotStatus.innerText = `Pilot ${pilot.value} ready is ready for launch`;
+               copilotStatus.innerText = `Co-pilot ${coPilot.value} ready is ready for launch`;
                launchStat.innerText = "Shuttle not ready for launch";
                fuelStatus.innerText ='Fuel level is not enough for the journey';
                }
