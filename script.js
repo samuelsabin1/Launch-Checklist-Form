@@ -45,7 +45,7 @@ window.addEventListener('load', function() {
       else{
          // measure input values and will be the bottom part of the page as per input but will require a page refresh after each submission.
 
-            if(fuelLvl.value < 10000){
+            if(fuelLvl.value < 10000 && cargoKg.value > 10000){
                // this is to update that <h2></h2> tag on the 3rd part
                launchStat.style.color = "red";
                //make sure to add these to view and update the bottom part of the page
@@ -54,8 +54,9 @@ window.addEventListener('load', function() {
                copilotStatus.innerText = `${coPilot.value} ready is ready for launch`;
                launchStat.innerText = "Shuttle not ready for launch";
                fuelStatus.innerText ='Fuel level is not enough for the journey';
+               cargoStatus.innerText ='Shuttle mass is too high for the journey';       
                }
-            else if(cargoKg.value > 10000){
+            else if(cargoKg.value > 10000 && fuelLvl.value > 10000){
                launchStat.style.color = "red";
                faultyItems.style.visibility = 'visible';
                pilotStatus.innerText = `${pilot.value} ready is ready for launch`;
@@ -64,6 +65,15 @@ window.addEventListener('load', function() {
                cargoStatus.innerText ='Shuttle mass is too high for the journey';       
                }
 
+            else if(fuelLvl.value < 10000 && cargoKg.value < 10000){
+               launchStat.style.color = "red";
+               faultyItems.style.visibility = 'visible';
+               pilotStatus.innerText = `${pilot.value} ready is ready for launch`;
+               copilotStatus.innerText = `${coPilot.value} ready is ready for launch`;
+               launchStat.innerText = "Shuttle not ready for launch";
+               fuelStatus.innerText ='Fuel level is not enough for the journey';
+               }
+               
             else {
                faultyItems.style.visibility = 'visible';
                launchStat.style.color = "green";
